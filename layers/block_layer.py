@@ -1,9 +1,10 @@
 import tensorflow as tf
+import tf_keras
 
 from utils.utils_stylegan2 import nf
 from layers.conv_2d_layer import Conv2DLayer
 
-class BlockLayer(tf.keras.layers.Layer):
+class BlockLayer(tf_keras.layers.Layer):
     """
     StyleGan2 discriminator Block layer
     """

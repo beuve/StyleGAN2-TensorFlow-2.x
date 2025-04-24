@@ -1,9 +1,10 @@
 import tensorflow as tf
+import tf_keras
 
 from stylegan2_generator import StyleGan2Generator
 from stylegan2_discriminator import StyleGan2Discriminator
 
-class StyleGan2(tf.keras.Model):
+class StyleGan2(tf_keras.Model):
     """ 
     StyleGan2 config f for tensorflow 2.x 
     """

@@ -1,10 +1,11 @@
 import tensorflow as tf
+import tf_keras
 import numpy as np
 
 from utils.utils_stylegan2 import get_weight_initializer_runtime_coef
 from dnnlib.ops.upfirdn_2d import upsample_conv_2d, conv_downsample_2d
 
-class ModulatedConv2DLayer(tf.keras.layers.Layer):
+class ModulatedConv2DLayer(tf_keras.layers.Layer):
     """
     StyleGan2 generator modulated convolution layer
     """

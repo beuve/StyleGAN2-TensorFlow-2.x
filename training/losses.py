@@ -1,7 +1,8 @@
 import tensorflow as tf
+import tf_keras
 import numpy as np
 
-class NonSaturatingLogLossPLRegularizer(tf.keras.losses.Loss):
+class NonSaturatingLogLossPLRegularizer(tf_keras.losses.Loss):
     """ 
     Generator loss. Non-saturating logistic loss with path length regularizer from the paper
     Analyzing and Improving the Image Quality of StyleGAN", Karras et al. 2019
@@ -61,7 +62,7 @@ class NonSaturatingLogLossPLRegularizer(tf.keras.losses.Loss):
         reg = pl_penalty * self.pl_weight
         return tf.reshape(reg,[-1,1])
     
-class LogLossR1Regularizer(tf.keras.losses.Loss):
+class LogLossR1Regularizer(tf_keras.losses.Loss):
     """ 
     Discriminator Loss. R1 and R2 regularizers from the paper
     Which Training Methods for GANs do actually Converge?", Mescheder et al. 2018

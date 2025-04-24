@@ -1,8 +1,9 @@
 import tensorflow as tf
+import tf_keras
 
 from layers.modulated_conv_2d_layer import ModulatedConv2DLayer
 
-class ToRgbLayer(tf.keras.layers.Layer):
+class ToRgbLayer(tf_keras.layers.Layer):
     """
     StyleGan2 generator To RGB layer
     """

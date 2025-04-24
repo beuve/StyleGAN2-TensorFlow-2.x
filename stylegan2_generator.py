@@ -1,4 +1,5 @@
 import tensorflow as tf
+import tf_keras
 import numpy as np
 
 from utils.weights_map import available_weights, synthesis_weights, mapping_weights, weights_stylegan2_dir
@@ -8,7 +9,7 @@ from layers.synthesis_main_layer import SynthesisMainLayer
 from layers.to_rgb_layer import ToRgbLayer
 from dnnlib.ops.upfirdn_2d import upsample_2d
 
-class MappingNetwork(tf.keras.layers.Layer):
+class MappingNetwork(tf_keras.layers.Layer):
     """
     StyleGan2 generator mapping network, from z to dlatents for tensorflow 2.x
     """
@@ -27,7 +28,7 @@ class MappingNetwork(tf.keras.layers.Layer):
         for i in range(self.mapping_layers):
             setattr(self, 'Dense{}'.format(i), DenseLayer(fmaps=512, lrmul=self.lrmul, name='Dense{}'.format(i)))
     
-        self.g_mapping_broadcast = tf.keras.layers.RepeatVector(self.dlatent_vector)
+        self.g_mapping_broadcast = tf_keras.layers.RepeatVector(self.dlatent_vector)
             
     def call(self, z):
         
@@ -48,7 +49,7 @@ class MappingNetwork(tf.keras.layers.Layer):
         
         return dlatents
 
-class SynthesisNetwork(tf.keras.layers.Layer):
+class SynthesisNetwork(tf_keras.layers.Layer):
     """
     StyleGan2 generator synthesis network from dlatents to img tensor for tensorflow 2.x
     """
@@ -113,7 +114,7 @@ class SynthesisNetwork(tf.keras.layers.Layer):
         images_out = y
         return tf.identity(images_out, name='images_out')
     
-class StyleGan2Generator(tf.keras.layers.Layer):
+class StyleGan2Generator(tf_keras.layers.Layer):
     """
     StyleGan2 generator config f for tensorflow 2.x
     """

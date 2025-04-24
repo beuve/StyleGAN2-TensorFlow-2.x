@@ -1,4 +1,5 @@
 import tensorflow as tf
+import tf_keras
 import numpy as np
 
 from utils.weights_map import available_weights, weights_stylegan2_dir, discriminator_weights
@@ -9,7 +10,7 @@ from layers.block_layer import BlockLayer
 from layers.conv_2d_layer import Conv2DLayer
 from layers.dense_layer import DenseLayer
 
-class StyleGan2Discriminator(tf.keras.layers.Layer):
+class StyleGan2Discriminator(tf_keras.layers.Layer):
     """
     StyleGan2 discriminator config f for tensorflow 2.x
     """

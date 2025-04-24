@@ -1,8 +1,9 @@
 import tensorflow as tf
+import tf_keras
 
 from layers.conv_2d_layer import Conv2DLayer
 
-class FromRgbLayer(tf.keras.layers.Layer):
+class FromRgbLayer(tf_keras.layers.Layer):
     """
     StyleGan2 discriminator From RGB layer
     """

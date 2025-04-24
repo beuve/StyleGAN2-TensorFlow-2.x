@@ -1,6 +1,7 @@
 import tensorflow as tf
+import tf_keras
 
-class MinibatchStdLayer(tf.keras.layers.Layer):
+class MinibatchStdLayer(tf_keras.layers.Layer):
     """
     StyleGan2 discriminator MinibatchStdLayer
     """

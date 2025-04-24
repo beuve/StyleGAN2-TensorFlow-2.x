@@ -1,8 +1,10 @@
+
 import tensorflow as tf
+import tf_keras
 
 from layers.modulated_conv_2d_layer import ModulatedConv2DLayer
 
-class SynthesisMainLayer(tf.keras.layers.Layer):
+class SynthesisMainLayer(tf_keras.layers.Layer):
     """
     StyleGan2 synthesis network main layer
     """

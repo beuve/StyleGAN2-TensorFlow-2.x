@@ -1,8 +1,9 @@
 import tensorflow as tf
+import tf_keras
 
 from utils.utils_stylegan2 import get_weight_initializer_runtime_coef
 
-class DenseLayer(tf.keras.layers.Layer):
+class DenseLayer(tf_keras.layers.Layer):
     """
     StyleGan2 Dense layer, including weights multiplication per runtime coef, and bias multiplication per lrmul
     """
